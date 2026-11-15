@@ -1,212 +1,405 @@
-
 # Financial Plan Intelligence
 
-### Agentic AI for Integrated Personal Finance and Investment Planning
+## From Financial Data to Informed Decisions
 
-**Financial Plan Intelligence** is an agentic AI project designed to support informed financial decisions by connecting personal finance management, savings allocation, investment portfolio optimization, and forward-looking financial risk assessment within a unified analytical framework.
+### An Agentic AI Framework for Personal Finance, Portfolio Optimization & Integrated Risk Analysis
 
-Rather than treating household budgeting and investment management as separate activities, the project integrates both dimensions to evaluate how income, expenses, savings, liquidity, and investment performance interact over time.
+## Overview
 
-The objective is not to maximize investment returns in isolation, but to support financially sustainable decisions by balancing investment opportunities with liquidity requirements, exposure to risk, and the ability to withstand adverse financial conditions.
+Financial Plan Intelligence is an **agentic AI-powered analytical platform** designed to support personal financial management, investment planning, and forward-looking financial decisions within a unified framework.
 
-The system combines quantitative financial models, scenario simulations, and a multi-agent architecture to translate complex financial information into integrated, evidence-based assessments.
+The project originates from a fundamental principle: **effective personal financial management requires a comprehensive approach**, combining the monitoring of income and expenses, control of cash flows, identification of potential financial risks, and corrective actions to maintain liquidity and financial resilience. Equally important is the effective management of financial surpluses, ensuring that accumulated savings are not left idle but are strategically allocated to investments, taking into account liquidity needs, risk exposure, and long-term financial objectives.
 
-## Project Overview
+The integrated analysis **builds on a 12-month monitoring period of personal income and expenses to assess cash flows and savings capacity, providing the basis for a balanced and prudent allocation of accumulated savings into an optimized investment portfolio with defensive characteristics**. The integration of personal financial planning and portfolio management brings together projections of personal finances, including potential financial shocks, with simulated portfolio performance to assess the evolution of liquidity and investments under different financial and market conditions. Specifically, it combines **five personal financial scenarios** (baseline conditions, a prolonged reduction in employment income, extraordinary expenses, and increased recurring expenses) with **three investment market scenarios** (unfavorable, central, and favorable). These market scenarios are intended as **illustrative proxies for potential portfolio gains and losses**, providing a broader perspective on how investment performance could interact with personal cash flows, liquidity needs, and potential financial shocks. They are estimated using **historical bootstrap simulations**, which resample observed stock returns to capture historical market fluctuations, volatility, and extreme movements. The purpose is to incorporate potential investment outcomes into the broader financial assessment, allowing personal budgeting, financial resilience, and investment risk to be evaluated together. The resulting **integrated combinations**, evaluated over rolling horizons from 1 to 24 months, allow the joint assessment of liquidity resilience, investment performance, and overall financial sustainability under alternative future conditions.
 
-The project addresses three interconnected dimensions of financial decision-making:
+In conclusion, the platform goes beyond monitoring financial performance. It aims to **transform financial data into actionable insights**, enabling users to understand their current financial position, **identify recurring expenses** and opportunities for improvement, **allocate savings more efficiently**, and evaluate the **sustainability of financial decisions** under alternative future conditions.
 
-**1. Personal Finance Management**
+---
 
-Analyzes historical income and expenses to evaluate spending patterns, savings capacity, available liquidity, and the sustainability of personal financial conditions.
+## Key Features
 
-**2. Investment Portfolio Planning**
+Financial Plan Intelligence integrates three complementary analytical capabilities within a single decision-support framework.
 
-Selects and optimizes an equity investment portfolio using historical market data, risk-return analysis, diversification constraints, and probabilistic projections of future performance.
+### Personal Finance Intelligence
 
-**3. Integrated Financial Planning**
+- Analysis of 12 months of historical household financial transactions.
+- Classification and assessment of income and expenditure.
+- Monthly cash-flow analysis and identification of financial imbalances.
+- Evaluation of savings capacity and available liquidity.
+- Identification of recurring expenses and potential financial vulnerabilities.
+- Financial resilience analysis under adverse household conditions.
+- Forward-looking liquidity projections over customizable monthly horizons.
 
-Combines personal finance projections with investment scenarios to assess total financial wealth, liquidity requirements, potential funding shortfalls, and financial resilience under different future conditions.
+### Investment Intelligence
 
-The distinctive value of the project lies in the interaction between these components: investment decisions are evaluated in relation to personal financial needs, while financial planning incorporates the potential evolution and risks of invested savings.
+- Quantitative analysis of 50 equities belonging to the STOXX Europe 50 universe.
+- Risk-return ranking and selection of 25 securities.
+- Statistical analysis of historical return distributions.
+- Portfolio optimization using Monte Carlo simulations.
+- Maximum Sharpe Ratio portfolio selection with diversification constraints.
+- Historical bootstrap simulations of potential future investment outcomes.
+- Assessment of unfavorable, central, and favorable market scenarios.
 
-## 1. Personal Finance Analysis
+### Integrated Financial Decision Support
 
-The Personal Finance component uses 12 months of historical financial transactions to establish an initial financial position.
+- Combined assessment of personal finance and investment performance.
+- Initial allocation of positive accumulated savings between liquidity and investments.
+- Five household financial scenarios and three investment market scenarios.
+- Fifteen integrated financial scenario combinations.
+- Rolling financial projections from 1 to 24 months.
+- Assessment of financial sustainability, liquidity resilience, and potential funding gaps.
+- Natural-language interaction through specialized AI agents.
 
-The analysis includes:
+---
 
-- Historical income and expense analysis.
-- Identification of recurring expenditure patterns.
-- Assessment of savings capacity and accumulated savings.
-- Initial allocation of available savings between liquidity and investments.
-- Forward-looking cash-flow and liquidity projections.
-- Evaluation of adverse financial conditions through stress testing.
+## Financial & Investment Methodology
 
-The initial allocation divides accumulated savings into two components: 50% retained as personal liquidity and 50% allocated to investments.
+### 1. Personal Finance Analysis
 
-Both components subsequently evolve according to their respective financial dynamics.
+The analysis begins with 12 months of historical financial transactions, covering household income, expenses, and cash flows.
 
-### Financial Stress Testing
+This initial observation period establishes the financial baseline and provides the information required to evaluate savings capacity, spending patterns, and financial stability.
 
-The system evaluates five personal finance conditions:
+The framework then examines how available financial resources may evolve under alternative household conditions, including income reductions, extraordinary expenses, and increased recurring expenditure.
 
-1. Baseline financial conditions.
-2. A 30% reduction in income.
-3. An extraordinary expense of €10,000.
-4. An extraordinary expense of €20,000.
-5. A 15% increase in recurring expenses.
+### 2. Investment Selection & Portfolio Optimization
 
-These conditions make it possible to examine how unexpected events or deteriorating financial circumstances affect future liquidity and financial sustainability.
+The investment methodology follows a **structured, sequential process**, in which each analytical stage informs subsequent modelling decisions.
 
-## 2. Investment Portfolio Analysis and Optimization
+**I. Historical market data analysis**
 
-The Investment component applies quantitative financial analysis to an initial universe of 50 equities belonging to the STOXX Europe 50 index.
+Five years of daily price and return series are analyzed for 50 equities belonging to the STOXX Europe 50 universe.
 
-Historical price series covering five years are used to construct a ranking and select 25 equities for the subsequent portfolio optimization process.
+**II. Risk-return assessment and selection**
 
-The analysis includes:
+Annualized returns and volatility are calculated, followed by a combined ranking assigning equal weight to both measures to select the top 25 securities.
 
-- Historical return and volatility calculations.
-- Risk-return-based equity ranking.
-- Selection of 25 equities from the initial investment universe.
-- Portfolio construction and optimization.
-- Monte Carlo evaluation of alternative portfolio allocations.
-- Diversification constraints, including a maximum of four equities per sector.
-- Historical bootstrap simulations to estimate potential future portfolio outcomes.
+**III. Return distribution analysis**
 
-The portfolio optimization evaluates 5,000 candidate allocations.
+The Jarque-Bera normality test and excess kurtosis analysis identify non-normal return distributions with heavy tails, indicating the presence of extreme market movements.
 
-The subsequent investment risk analysis uses 1,000 simulated trajectories to assess possible portfolio developments over a 24-month horizon.
+These findings motivate the use of historical bootstrap simulations to better capture the distinctive risk characteristics of individual stocks.
 
-### Investment Risk Scenarios
+**IV. Portfolio construction and optimization**
 
-Portfolio outcomes are represented through three probabilistic scenarios:
+Covariance analysis and Monte Carlo simulation of **5,000 candidate portfolios** are used to select the maximum Sharpe Ratio portfolio, subject to diversification constraints, including a maximum of four securities per sector.
 
-- **Unfavorable market (P5):** downside portfolio outcome.
-- **Central market (P50):** median portfolio outcome.
-- **Favorable market (P95):** upside portfolio outcome.
+**V. Historical bootstrap simulation**
 
-These scenarios provide a framework for evaluating investment uncertainty rather than relying on a single deterministic forecast.
+Non-parametric resampling of observed returns over the preceding five years generates **1,000 potential portfolio trajectories over the subsequent 24 months**.
 
-## 3. Integrated Financial Planning and Resilience
+The methodology incorporates historical peaks, downturns, and extreme fluctuations while preserving contemporaneous cross-asset relationships.
 
-The integrated financial assessment combines five personal finance conditions with three investment scenarios, producing **15 financial scenario combinations**.
+**VI. Forward-looking scenario analysis**
 
-Each combination is evaluated across a rolling time horizon of 1 to 24 months.
+Three potential portfolio outcomes are calculated from the simulated performance distribution:
 
-The analysis connects:
+| Market scenario | Percentile | Interpretation |
+|---|---|---|
+| Unfavorable | P5 | Downside portfolio outcome |
+| Central | P50 | Median portfolio outcome |
+| Favorable | P95 | Upside portfolio outcome |
 
-- Future income and expenditure.
-- Personal liquidity evolution.
-- Investment portfolio performance.
-- Total financial wealth.
-- Potential liquidity deficits and funding requirements.
-- Financial sustainability under adverse conditions.
+These scenarios represent possible investment outcomes, not guaranteed future performance.
 
-This integrated approach makes it possible to assess whether available financial resources remain sufficient when personal financial shocks and unfavorable market developments occur simultaneously.
+### 3. Integrated Financial Assessment
 
-It also supports the identification of situations in which investment capital may need to be considered in relation to personal liquidity requirements.
+Following the initial 12-month observation period, **50% of accumulated positive net savings is invested and 50% retained as liquidity**.
 
-The resulting assessments provide a more comprehensive perspective than analyzing savings, investment returns, or household expenses independently.
+Over the subsequent 24 months:
 
-## 4. Agentic AI Architecture
+- Personal liquidity evolves according to household cash flows and financial shocks.
+- Investment capital follows simulated market performance.
+- The combined evolution is assessed to identify financial vulnerabilities and potential funding requirements.
 
-Financial Plan Intelligence incorporates a multi-agent architecture designed to coordinate personal finance analysis, investment risk evaluation, and integrated financial assessments.
+Five personal finance scenarios are considered:
 
-The architecture includes specialized analytical and orchestration components:
+| Scenario | Financial condition |
+|---|---|
+| Baseline | Historical household financial conditions |
+| Income reduction | 30% reduction in employment income |
+| Extraordinary expense 1 | €10,000 unexpected expenditure |
+| Extraordinary expense 2 | €20,000 unexpected expenditure |
+| Recurring expenses | 15% increase in recurring expenditure |
 
-**Financial Orchestrator**
+Each financial condition is combined with the three investment scenarios, generating **15 integrated combinations**.
 
-Coordinates the analytical workflow and directs financial questions toward the relevant components.
+The system evaluates these combinations over rolling horizons from 1 to 24 months, supporting comparisons between alternative financial and market conditions.
 
-**Personal Finance Agent**
+### From Analysis to Financial Decisions
 
-Interprets personal finance conditions, liquidity projections, and the effects of financial shocks.
+The integrated framework helps address practical questions such as:
 
-**Investment Risk Agent**
+- *How much of my accumulated savings can I allocate to investments while maintaining adequate liquidity?*
+- *What happens to my financial position if my income falls for an extended period?*
+- *Can I cover an unexpected expense without compromising my investment strategy or having to sell assets?*
+- *How would unfavorable market performance affect my overall financial position under a simultaneous household financial shock?*
+- *What additional funding might be required to maintain financial sustainability?*
 
-Analyzes investment portfolio outcomes and the implications of alternative market scenarios.
+Through this integrated quantitative approach, Financial Plan Intelligence **translates financial analysis into practical decision support**, helping users understand the potential consequences of their choices before making them.
 
-**Financial Assessment Agent**
+---
 
-Integrates personal finance and investment risk information to evaluate financial resilience and sustainability.
+## Agentic AI Architecture
 
-**Response Generation Agent**
+Financial Plan Intelligence is developed in Python using a **modular, tool-based architecture orchestrated through LangGraph**.
 
-Interprets natural-language questions and generates contextualized financial explanations based on the integrated analysis.
+The system separates quantitative calculations from agentic reasoning, allowing specialized components to execute financial analyses based on user-defined parameters and time horizons.
 
-The response generation process supports flexible monthly horizons from 1 to 24 months and different combinations of financial conditions and investment scenarios.
+### Main Components
+
+| Component | Responsibility |
+|---|---|
+| Financial Orchestrator | Interprets requests, manages analytical parameters, and coordinates specialized tools and agents |
+| Personal Finance Agent | Processes household financial information, cash flows, savings, and liquidity conditions |
+| Investment Risk Agent | Evaluates portfolio risk, simulated performance, and alternative market scenarios |
+| Financial Assessment Agent | Integrates personal finance and investment outcomes into comprehensive financial assessments |
+| Shared Analytical State | Maintains the information required for coordinated analysis and response generation |
 
 ### Analytical Workflow
 
-1. Historical personal finance and market data are processed.
-2. Personal financial conditions and savings capacity are assessed.
-3. Investment securities are selected and portfolio weights are optimized.
-4. Future portfolio outcomes are estimated through quantitative simulations.
-5. Personal finance stress tests and investment scenarios are integrated.
-6. Specialized agents interpret the requested financial conditions and time horizon.
-7. The system generates evidence-based financial assessments.
+```text
+Natural-language financial question
+                 |
+                 v
+        Financial Orchestrator
+                 |
+       +---------+---------+
+       |                   |
+       v                   v
+Personal Finance      Investment Risk
+     Agent                 Agent
+       |                   |
+       +---------+---------+
+                 |
+                 v
+       Financial Assessment
+              Agent
+                 |
+                 v
+     Integrated financial analysis
+                 |
+                 v
+     Evidence-based explanation
+```
 
-## 5. Methodology
+The multi-agent architecture supports questions involving individual analytical domains as well as requests requiring the integration of personal financial conditions, investment performance, and financial resilience.
 
-The project combines deterministic financial planning, quantitative investment analysis, probabilistic risk estimation, and agentic interpretation.
+---
 
-### Personal Finance Methodology
+## Technology Stack
 
-Historical financial transactions establish the initial position, while projected income, expenses, and liquidity movements provide a basis for evaluating future financial conditions.
+The project combines financial modelling, statistical analysis, agentic AI, and interactive analytical visualization.
 
-Stress testing introduces alternative assumptions to examine the consequences of adverse financial events.
+### Programming & Data Analysis
 
-### Investment Methodology
+| Technology | Application |
+|---|---|
+| Python | Core development and financial modelling |
+| Pandas | Financial transaction processing and time-series analysis |
+| NumPy | Numerical calculations, arrays, and simulations |
+| SciPy | Statistical analysis, including Jarque-Bera and kurtosis |
+| yfinance | Historical equity market data retrieval |
+| Math | Mathematical operations and numerical utilities |
 
-Historical equity data support security selection and portfolio optimization.
+### Quantitative Methods
 
-Monte Carlo optimization evaluates alternative portfolio allocations, while historical bootstrap simulations estimate the distribution of potential investment outcomes.
+- Annualized return and volatility calculations.
+- Risk-return ranking.
+- Covariance and portfolio risk analysis.
+- Sharpe Ratio optimization.
+- Monte Carlo portfolio simulations.
+- Jarque-Bera normality testing.
+- Excess kurtosis analysis.
+- Historical bootstrap resampling.
+- Percentile-based investment scenarios.
+- Deterministic household financial stress testing.
+- Rolling liquidity and investment projections.
 
-### Integrated Assessment Methodology
+### Agentic AI & Orchestration
 
-Personal finance trajectories and portfolio scenarios are combined over corresponding time horizons.
+| Library | Application |
+|---|---|
+| LangGraph | Multi-agent workflow orchestration and shared state |
+| LangChain Core | Agent tools, prompts, messages, and runnable components |
+| LangGraph MemorySaver | In-memory workflow checkpointing |
 
-The integrated assessment examines liquidity, investment capital, total financial wealth, and possible funding requirements across the 15 scenario combinations.
+### Visualization & Interactive Demo
 
-### Agentic Interpretation
+| Library | Application |
+|---|---|
+| Gradio | Interactive analytical interface and live demonstration |
+| Matplotlib | Financial charts and statistical visualizations |
+| Plotly | Interactive charts and financial data exploration |
+| Seaborn | Statistical data visualization |
+| IPython.display | Notebook visualizations and embedded outputs |
 
-The multi-agent layer connects the analytical results to natural-language financial questions, allowing users to explore alternative conditions, compare outcomes, and understand the implications of financial decisions.
+The implementation also uses Python standard libraries for date handling, data structures, text processing, and execution utilities.
 
-## 6. Technologies
+---
 
-The project uses:
+## Repository Structure
 
-- **Python** for financial analysis and quantitative modeling.
-- **Pandas and NumPy** for data processing and numerical calculations.
-- **Monte Carlo simulation** for portfolio optimization.
-- **Historical bootstrap simulation** for investment risk projections.
-- **LangGraph** for multi-agent orchestration.
-- **Generative AI** for financial interpretation and contextualized response generation.
-- **Jupyter Notebook** for implementation, documentation, and reproducibility.
+The repository is organized around the main Jupyter Notebook and its supporting financial data.
 
-## 7. Project Files
+```text
+financial-plan-intelligence/
+|
+|-- Financial_Plan_Intelligence.ipynb
+|
+|-- data/
+|   |-- personal_finance_transactions_12_months_Nov2025_Oct2026.csv
+|
+|-- README.md
+```
 
-**Main Notebook**
+### Main Notebook
 
-[Financial_Plan_Intelligence.ipynb](Financial_Plan_Intelligence.ipynb)
+**Financial_Plan_Intelligence.ipynb**
 
-Contains the financial analysis, quantitative models, scenario simulations, agentic architecture, and project demonstrations.
+The principal project deliverable, containing the quantitative analyses, financial models, portfolio optimization methodology, agentic architecture, and interactive demonstrations.
 
-**Data**
+The notebook documents the development process and integrates analytical outputs with explanations of the underlying methodology.
 
-The `data/` directory contains the financial transaction dataset used in the Personal Finance analysis.
+[Open the Jupyter Notebook](https://github.com/Valeria-Raele/financial-plan-intelligence/blob/main/Financial_Plan_Intelligence.ipynb)
 
-**Repository**
+### Financial Dataset
 
-[Financial Plan Intelligence — GitHub](https://github.com/Valeria-Raele/financial-plan-intelligence)
+**data/personal_finance_transactions_12_months_Nov2025_Oct2026.csv**
 
-## 8. Project Scope
+Contains the 12-month personal finance transaction dataset used to establish the initial household financial position and support subsequent analysis.
 
-Financial Plan Intelligence is a research and development project demonstrating how quantitative financial analysis and agentic AI can be combined to support integrated financial planning.
+### Market Data
 
-Its primary contribution is the connection between personal financial management and investment planning within a coherent decision-support framework.
+Historical equity data are retrieved using yfinance and processed within the quantitative investment workflow.
 
-The project demonstrates how financial decisions can be evaluated not only in terms of expected investment performance, but also in relation to future liquidity, financial vulnerability, and the sustainability of personal financial resources.
+---
 
-It is intended as an analytical and decision-support framework, not as a personalized investment advisory service or a guarantee of future financial outcomes.
+## Getting Started
+
+### Requirements
+
+- Python 3
+- Jupyter Notebook or Google Colab
+- Internet access for retrieving historical market data
+- The required Python libraries
+- Access to the financial transaction dataset
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Valeria-Raele/financial-plan-intelligence.git
+cd financial-plan-intelligence
+```
+
+Install the principal dependencies:
+
+```bash
+pip install numpy pandas scipy yfinance matplotlib seaborn plotly gradio langgraph langchain-core
+```
+
+The installation command covers the principal third-party libraries identified in the notebook. Additional dependencies or environment configuration may be required depending on the selected execution environment and agent model configuration.
+
+### Running the Notebook
+
+1. Open `Financial_Plan_Intelligence.ipynb` in Jupyter Notebook or Google Colab.
+2. Install the required dependencies.
+3. Configure the data paths and any model-access credentials required by the execution environment.
+4. Run the notebook cells in sequence.
+5. Explore the quantitative analyses, financial projections, and interactive demonstration.
+
+The notebook should be executed in the intended environment with its required data and external services available.
+
+---
+
+## Interactive Live Demo
+
+### Explore Financial Plan Intelligence
+
+The **main Jupyter Notebook includes an interactive Gradio demonstration** designed to make the project's analytical capabilities accessible through natural-language questions.
+
+The demonstration allows users to interact with the underlying quantitative and agentic system rather than simply reviewing static financial results.
+
+It covers four complementary areas:
+
+**Personal Finance Analysis**
+
+Explore historical income, expenses, cash flows, savings, and financial conditions.
+
+**Investment Analysis**
+
+Examine equity selection, portfolio optimization, investment risk, and potential portfolio outcomes.
+
+**Financial Stability & Resilience**
+
+Assess the impact of income reductions, unexpected expenses, and other financial shocks on household liquidity and financial sustainability.
+
+**Integrated Financial Assessment**
+
+Combine personal financial scenarios with alternative investment outcomes to examine their joint impact on liquidity, investments, and overall financial resilience.
+
+Users can formulate their own questions, explore predefined examples, and specify analytical parameters, including rolling time horizons from 1 to 24 months.
+
+The interactive demonstration is provided **within the notebook** and illustrates the implemented analytical capabilities. It is not presented as a separately deployed, production-ready financial application.
+
+---
+
+## Validation & Analytical Scope
+
+The project includes analytical validation and testing of the quantitative and agentic components.
+
+Validation covers:
+
+- Historical financial data processing.
+- Portfolio selection and optimization outputs.
+- Investment scenario calculations.
+- Personal finance stress testing.
+- Rolling monthly projections.
+- Integrated financial assessments.
+- Agentic interpretation of financial questions.
+
+The integrated testing framework examines combinations of household financial conditions, investment scenarios, and monthly time horizons.
+
+The project is designed to demonstrate reproducible quantitative analysis and coherent integration between specialized analytical components.
+
+---
+
+## Limitations
+
+The project is intended for analytical research and financial decision support.
+
+Several methodological limitations should be considered:
+
+**Historical data dependence**
+
+Investment simulations rely on observed historical market returns. Historical bootstrap techniques preserve characteristics of the sample but cannot anticipate previously unobserved market conditions.
+
+**Scenario uncertainty**
+
+The unfavorable, central, and favorable market scenarios represent conditional simulated outcomes rather than predictions of actual future returns.
+
+**Portfolio optimization**
+
+The maximum Sharpe Ratio portfolio is selected according to the specified quantitative methodology and constraints. This does not guarantee future outperformance.
+
+**Financial projections**
+
+Household financial scenarios are based on defined assumptions and should not be interpreted as forecasts of actual future income, expenses, or financial needs.
+
+**Analytical scope**
+
+The project demonstrates a quantitative and agentic financial decision-support framework. It does not constitute personalized financial advice or a production-ready financial advisory service.
+
+---
+
+## Project Purpose
+
+Financial Plan Intelligence demonstrates how **personal financial management, quantitative investment analysis, and agentic AI** can be combined within a coherent financial decision-support framework.
+
+Its distinctive contribution lies in integrating household financial conditions and investment outcomes to assess how available resources can be allocated, managed, and preserved under alternative future scenarios.
+
+The project reflects an end-to-end approach to financial product development, combining **product vision, financial methodology, quantitative modelling, agentic architecture, and analytical validation**.
+
+**From financial data to informed decisions.**
